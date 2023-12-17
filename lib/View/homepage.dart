@@ -320,7 +320,7 @@ class _homepageState extends State<homepage> {
                         Padding(
                           padding: EdgeInsets.only(top: 20),
                           child: Container(
-                            height: 350,
+                            height: 256,
                             child: ListView.builder(
                               shrinkWrap: true,
                               itemCount: filteredMovies.length,

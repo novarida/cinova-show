@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projekweb/Model/model.dart';
 
 class DetailPage extends StatelessWidget {
@@ -18,6 +19,7 @@ class DetailPage extends StatelessWidget {
       ),
       body: Container(
         height: 800,
+        padding: EdgeInsets.all(30),
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.deepPurple[50],
@@ -27,7 +29,7 @@ class DetailPage extends StatelessWidget {
           ),
         ),
         child: ListView(
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(20.0),
           children: [
             Center(
               child: Container(
@@ -47,10 +49,11 @@ class DetailPage extends StatelessWidget {
             Center(
               child: Text(
                 movie.title,
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
+                style: GoogleFonts.varelaRound(
+                  fontSize: 30, 
+                  fontWeight: FontWeight.bold
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             SizedBox(height: 8.0),
@@ -74,6 +77,14 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16.0),
+            Text(
+              'Movie Overview:',
+              style: GoogleFonts.varelaRound(
+                fontSize: 20, 
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            SizedBox(height: 8),
             Text(
               movie.overview,
               textAlign: TextAlign.justify,
