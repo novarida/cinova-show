@@ -1,126 +1,114 @@
-// ignore_for_file: prefer_const_constructors
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class profile extends StatelessWidget {
-  const profile({super.key});
+class ProfilePage extends StatefulWidget {
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
 
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
+        elevation: 0.0,
         backgroundColor: Colors.deepPurple[300],
-        title: Text('My Profile'),
-        ),
-        body: ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 24,
+        title: Text(
+          "Profile Page",
+          style: GoogleFonts.poppins(
+            fontSize: 25, 
           ),
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 30,
-                vertical: 22,
-              ),
-              decoration: BoxDecoration(
+        ),
+        centerTitle: true,
+        actions: [
+          Builder(builder: (BuildContext context) {
+            return Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: IconButton(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                icon: Icon(
+                  CupertinoIcons.square_arrow_right,
+                  size: 34,
+                ),
+                onPressed: () {},
               ),
-              child: Column(
-                children: [
-                  Container(
-                    width: 120,
-                    height: 120,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/nova.png',
-                        ),
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        width: 28,
-                        height: 28,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.check_circle, 
-                            color: Colors.blue, 
-                            size: 24, 
-                            ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Text(
-                    'Nova Rahma',
-                    style: TextStyle(
-                      color: Colors.black, 
-                      fontWeight: FontWeight.w500, 
-                      fontSize: 18
-                      ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.manage_accounts_rounded),
-                    title: Text('Edit Profile'),
-                    onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => profile(),
-                        ));
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.security_sharp),
-                    title: Text('Security Account'),
-                    onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => profile(),
-                        ));
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.help_center),
-                    title: Text('Help Center'),
-                    onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => profile(),
-                        ));
-                    },
-                  ),
-                  new Divider(),
-                  ListTile(
-                    leading: Icon(Icons.exit_to_app),
-                    title: Text('Logout'),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
+            );
+          }),
+        ],
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: ListView(
+          children: [
+            Text(
+              "Profile Data",
+              style: GoogleFonts.breeSerif(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
               ),
-            )
+            ),
+            SizedBox(height: 30.0),
+            Center(
+              child: CircleAvatar(
+                radius: 80,
+                backgroundImage: AssetImage('assets/images/nova.png'),
+              ),
+            ),
+            SizedBox(height: 16),
+            Center(
+              child: Text(
+                'Nova Rahma',
+                style: GoogleFonts.varelaRound(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            SizedBox(height: 30.0),
+            buildProfileItem('Username', 'noparia', Icons.person),
+            buildProfileItem('Bio', 'cewenya hali', CupertinoIcons.pencil_ellipsis_rectangle),
+            buildProfileItem('Email', 'nova@gmail.com', Icons.email),
+            buildProfileItem('Phone', '0813080807654', Icons.phone),
           ],
-        )
+        ),
+      ),
+    );
+  }
+
+  Widget buildProfileItem(String label, String value, IconData icon) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 20),
+        Text(label),
+        Container(
+          height: 50,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(227, 209, 209, 209),
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: Colors.grey),
+          ),
+          child: Row(
+            children: [
+              SizedBox(width: 20),
+              Icon(
+                icon,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Text(
+                value,
+                style: TextStyle(fontSize: 18),
+              )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

@@ -52,7 +52,7 @@ class _appkuState extends State<appku> {
         children: [
           homepage(),
           AiringMovie(),
-          profile(),
+          ProfilePage(),
           setting(),
         ],
       ),

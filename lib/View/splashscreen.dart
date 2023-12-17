@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projekweb/screens/loginpage.dart';
 
 class splashscreen extends StatelessWidget {
@@ -14,14 +15,14 @@ class splashscreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Image.asset('assets/images/Cinova Show.png'),
             Image.asset('assets/images/splash.png'),
             SizedBox(height: 10),
             Text(
               'Cinova Show',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: GoogleFonts.greatVibes(
+                fontSize: 50
+              )
             ),
             SizedBox(height: 20),
             ElevatedButton(
@@ -32,9 +33,11 @@ class splashscreen extends StatelessWidget {
                   ),
                 );
               },
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple[700],
-                // shadowColor: Color(20),
+              style: ButtonStyle(
+                fixedSize: MaterialStateProperty.all<Size>(
+                  Size.fromHeight(50), // Sesuaikan tinggi sesuai kebutuhan
+                ),
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 158, 61, 200)),
               ),
               child: Text(
                 "Let's Watching",

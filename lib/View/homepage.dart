@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projekweb/View/detailpage.dart';
 import 'package:projekweb/View/moviegenre.dart';
 import 'package:projekweb/View/tvgenre.dart';
@@ -195,8 +196,10 @@ class _homepageState extends State<homepage> {
         backgroundColor: Colors.deepPurple[300],
         title: Text(
           "Cinova Show",
-          style: TextStyle(
-          ),
+          style: GoogleFonts.poppins(
+            fontSize: 28, 
+            fontWeight: FontWeight.bold
+          )
         ),
         centerTitle: true,
       ),
@@ -220,7 +223,7 @@ class _homepageState extends State<homepage> {
                       child: TextField(
                         controller: searchController,
                         decoration: InputDecoration(
-                          hintText: 'Search movie',
+                          hintText: 'Search movie and tv',
                           border: InputBorder.none,
                         ),
                         onChanged: (query) {
@@ -258,7 +261,7 @@ class _homepageState extends State<homepage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 15, vertical: 15),
                     child: const Text(
-                      "Movie Genres",
+                      "Movie and TV Series",
                       style: TextStyle(
                         fontSize: 19,
                         color: Colors.black87,

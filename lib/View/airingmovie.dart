@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:projekweb/Model/model.dart';
 import 'package:projekweb/Model/movieairing_api.dart';
 import 'package:projekweb/View/detailpage2.dart';
@@ -15,7 +16,12 @@ class AiringMovie extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.deepPurple[300],
-        title: Text('Airing Movies'),
+        title: Text(
+          'Airing Movies',
+          style: GoogleFonts.poppins(
+            fontSize: 25
+          ),
+        ),
         centerTitle: true,
       ),
       body: Container(
