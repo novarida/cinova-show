@@ -11,13 +11,14 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple[300],
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.deepPurple[300],
         title: Text(
-          "Profile Page",
+          'Profile Page',
           style: GoogleFonts.poppins(
-            fontSize: 25, 
+            fontSize: 25
           ),
         ),
         centerTitle: true,
@@ -38,6 +39,15 @@ class _ProfilePageState extends State<ProfilePage> {
         ],
       ),
       body: Container(
+        height: 800,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.deepPurple[50],
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
         padding: EdgeInsets.all(16),
         child: ListView(
           children: [
@@ -70,7 +80,7 @@ class _ProfilePageState extends State<ProfilePage> {
             SizedBox(height: 30.0),
             buildProfileItem('Username', 'noparia', Icons.person),
             buildProfileItem('Bio', 'cewenya hali', CupertinoIcons.pencil_ellipsis_rectangle),
-            buildProfileItem('Email', 'nova@gmail.com', Icons.email),
+            buildProfileItem('Email', 'nopa@gmail.com', Icons.email),
             buildProfileItem('Phone', '0813080807654', Icons.phone),
           ],
         ),
