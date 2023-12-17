@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "573154829762",
+    "project_id": "cinova-show",
+    "storage_bucket": "cinova-show.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573154829762:android:40c97fe562cd8c309e625b",
+        "android_client_info": {
+          "package_name": "com.example.projekweb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjUx6feMXBWHaes_d9dH3TvhayccfhVBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
